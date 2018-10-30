@@ -1,21 +1,25 @@
-# Halloween
-
+colour1 = 255
+colour2 = 165
+center = 374 
+centery = 243
+clicked = False
 def setup():
     size(640, 480)
-    background(0)
     
 def draw():
+    global colour1
+    global colour2
+    background(0)
     noStroke()
-
-    #Pumpkin
-    fill(0,255,0)
+   #Pumpkin
+    fill(0,colour1,0)
     rect( 360, 240 / 2, 25, 50)
-    fill(255, 165, 0)
+    fill(colour1, colour2, 0)
     ellipse(width *2 /3, height / 2, 200, 200)
     ellipse(width /2, height /2, 200, 200)
 
     #Face
-    fill(255, 255, 0)
+    fill(colour1, colour1, 0)
     stroke(0);
     triangle(270, 220, 350, 220, 310, 160)
     triangle(390, 220, 430, 160, 470, 220)
@@ -24,6 +28,12 @@ def draw():
     triangle(330, 260, 365, 310, 400, 260)
     triangle(365, 310, 400, 260, 435, 310)
     triangle(400, 260, 435, 310, 470, 260)
+    
+    #fading
+    if clicked == True:
+        colour1 -= 2
+        colour2 -= 2
 
-    
-    
+def mouseClicked():
+    global clicked
+    clicked = True
