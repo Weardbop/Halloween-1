@@ -2,11 +2,13 @@ colour1 = 255
 colour2 = 165
 center = 374 
 centery = 243
+textsize = 10
 clicked = False
 def setup():
     size(640, 480)
     
 def draw():
+    global textsize
     global colour1
     global colour2
     background(0)
@@ -31,8 +33,13 @@ def draw():
     
     #fading
     if clicked == True:
+        textsize += 1
         colour1 -= 2
         colour2 -= 2
+        fill(255, 102, 0)
+        textSize(textsize)
+        text('Halloween', width/2, height/2)
+        
 
 def mouseClicked():
     global clicked
