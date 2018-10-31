@@ -33,6 +33,7 @@ def draw():
     
     #fading
     if clicked == True:
+        textAlign(CENTER, CENTER)
         textsize += 1
         colour1 -= 2
         colour2 -= 2
